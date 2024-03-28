@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsxs0mdc2jn1u"]
+
+[ext_resource type="Texture2D" uid="uid://b37on2v3qujrg" path="res://art/bugs/bug3.png" id="1_46mr8"]
+[ext_resource type="Script" path="res://bug.gd" id="1_niikr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8inmn"]
+radius = 10.2514
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5a1pc"]
+radius = 98.0
+height = 200.0
+
+[node name="Bug" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_niikr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.36, 2.32)
+shape = SubResource("CircleShape2D_8inmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.632813, 0.617188)
+texture = ExtResource("1_46mr8")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CapsuleShape2D_5a1pc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
