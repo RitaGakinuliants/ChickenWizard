@@ -2437,9 +2437,12 @@ wait_time = 2.0
 [node name="BugSpawnBush" parent="." instance=ExtResource("8_xcr60")]
 position = Vector2(3147, -67)
 
+[connection signal="value_decreased" from="Player/HealthComponent" to="HUD" method="_on_health_component_value_decreased"]
 [connection signal="spawn" from="BugSpawnBush3" to="." method="_on_bug_spawn_bush_3_spawn"]
 [connection signal="spawn" from="BugSpawnBush2" to="." method="_on_bug_spawn_bush_2_spawn"]
 [connection signal="spawn" from="BugSpawnBush" to="." method="_on_bug_spawn_bush_spawn"]
 
+[editable path="HUD"]
+[editable path="Player"]
 [editable path="BugSpawnBush3"]
 [editable path="BugSpawnBush2"]

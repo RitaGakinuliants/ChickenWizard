@@ -1,6 +1,10 @@
 extends Node2D
 class_name EntityResource
 
+signal value_increased
+signal value_decreased
+signal value_zero
+
 @export var max_value = 3
 @export var initial_value = 3
 var _current_value : int
@@ -18,6 +22,7 @@ func get_current_value():
 func decrease_value(amount : int):
 	if _current_value > 0 and amount > 0:
 		_current_value = max((_current_value - amount), 0)
+		value_decreased.emit(_current_value)
 	else:
 		return false
 	

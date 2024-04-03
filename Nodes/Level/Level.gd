@@ -1,10 +1,15 @@
 extends Node
 
+@onready var health_container = $HUD/HealthContainer
+
 @export var bug_scene: PackedScene
 var score
 
 func _ready():
 	score = 0
+	
+	var local_hp : int = $Player/HealthComponent._current_value
+	$HUD.setMaxLife(local_hp)
 	
 func _process(delta):
 	score_update()

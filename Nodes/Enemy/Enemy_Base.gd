@@ -17,4 +17,3 @@ func _on_enemy_hitbox_body_entered(body):
 	if body == player:
 		var local_hp_component = get_node("../Player/HealthComponent")
 		local_hp_component.decrease_value(damage_amount)
-		print(local_hp_component._current_value)

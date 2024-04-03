@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjrsa438bnl1"]
+
+[ext_resource type="Texture2D" uid="uid://cbr4tjfisn64v" path="res://Art/GUI/Icons/life_icon.png" id="1_06ri8"]
+
+[node name="HPIcon" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(72, 64)
+offset_right = 72.0
+offset_bottom = 64.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 28)
+scale = Vector2(0.71475, 0.71475)
+texture = ExtResource("1_06ri8")
