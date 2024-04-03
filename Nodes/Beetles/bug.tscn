@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsxs0mdc2jn1u"]
 
-[ext_resource type="Texture2D" uid="uid://b37on2v3qujrg" path="res://art/bugs/bug3.png" id="1_46mr8"]
-[ext_resource type="Script" path="res://bug.gd" id="1_niikr"]
+[ext_resource type="Script" path="res://Nodes/Beetles/bug.gd" id="1_vtr60"]
+[ext_resource type="Texture2D" uid="uid://b37on2v3qujrg" path="res://Art/bugs/bug3.png" id="2_u4abo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8inmn"]
 radius = 10.2514
@@ -14,7 +14,7 @@ height = 200.0
 collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_niikr")
+script = ExtResource("1_vtr60")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.36, 2.32)
@@ -22,7 +22,7 @@ shape = SubResource("CircleShape2D_8inmn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.632813, 0.617188)
-texture = ExtResource("1_46mr8")
+texture = ExtResource("2_u4abo")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

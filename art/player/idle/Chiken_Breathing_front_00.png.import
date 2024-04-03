@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dklxbkbrs158f"
-path="res://.godot/imported/Chiken_Idle_front.png-167b9e3f17a14baf3553cf4f10825aab.ctex"
+uid="uid://c7niusweb884l"
+path="res://.godot/imported/Chiken_Breathing_front_00.png-b5c1ad73f9820bcd33b9a199e700e2ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/player/idle/Chiken_Idle_front.png"
-dest_files=["res://.godot/imported/Chiken_Idle_front.png-167b9e3f17a14baf3553cf4f10825aab.ctex"]
+source_file="res://Art/player/idle/Chiken_Breathing_front_00.png"
+dest_files=["res://.godot/imported/Chiken_Breathing_front_00.png-b5c1ad73f9820bcd33b9a199e700e2ad.ctex"]
 
 [params]
 

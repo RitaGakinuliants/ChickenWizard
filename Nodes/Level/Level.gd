@@ -39,3 +39,7 @@ func _on_bug_spawn_bush_2_spawn():
 
 func _on_bug_spawn_bush_3_spawn():
 	bug_spawn($BugSpawnBush3)
+	
+	
+func enemy_spawn():
+	pass

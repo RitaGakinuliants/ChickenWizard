@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkro538fsc5b8"]
+
+[ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_f30i2"]
+[ext_resource type="Texture2D" uid="uid://c7niusweb884l" path="res://Art/player/idle/Chiken_Breathing_front_00.png" id="2_2gqdy"]
+[ext_resource type="PackedScene" uid="uid://dbuvobsxojdal" path="res://Components/HealthComponent.tscn" id="2_2rg6v"]
+[ext_resource type="Texture2D" uid="uid://8hwqo7kmj75" path="res://Art/player/idle/Chiken_Breathing_front_01.png" id="3_2cfmd"]
+[ext_resource type="Texture2D" uid="uid://15rfv6kfdak1" path="res://Art/player/idle/Chiken_Breathing_front_02.png" id="4_t5jvw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75t6u"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_2gqdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cfmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t5jvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cfmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2gqdy")
+}],
+"loop": true,
+"name": &"breathing_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v46v6"]
+radius = 8.83816
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhimp"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_f30i2")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_2rg6v")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_75t6u")
+animation = &"breathing_front"
+frame_progress = 0.63447
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(-14.7098, 14.4336)
+shape = SubResource("CircleShape2D_v46v6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+scale = Vector2(16.664, 16.664)
+shape = SubResource("CircleShape2D_dhimp")
+
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]

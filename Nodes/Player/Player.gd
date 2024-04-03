@@ -1,6 +1,7 @@
 extends CharacterBody2D
+class_name PlayerCharacter
 
-@export var speed : float = 500.0
+@export var speed : float = 1000.0
 var score = 0
 
 func _ready():
@@ -14,7 +15,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 		
-	$AnimatedSprite2D.animation = "idle_front"
+	$AnimatedSprite2D.animation = "breathing_front"
 	$AnimatedSprite2D.play()
 
 	move_and_slide()
@@ -27,3 +28,4 @@ func _on_player_hitbox_body_entered(body):
 		if body.has_method("prey"):
 			body.queue_free()
 			score += 1
+		

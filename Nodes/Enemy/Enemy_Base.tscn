@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu04gjf6oierd"]
+
+[ext_resource type="Script" path="res://Nodes/Enemy/Enemy_Base.gd" id="1_fqyik"]
+[ext_resource type="Texture2D" uid="uid://c16ryigbe7r66" path="res://Art/enemy/enemy_1.png" id="2_melb4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75t6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_melb4")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v76pd"]
+radius = 9.85738
+height = 31.593
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3bcu"]
+radius = 166.0
+height = 338.0
+
+[node name="EnemyBase" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_fqyik")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.633466, 0.633466)
+sprite_frames = SubResource("SpriteFrames_75t6u")
+animation = &"idle_front"
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(-14.7098, 14.4336)
+shape = SubResource("CapsuleShape2D_v76pd")
+
+[node name="EnemyHitbox" type="Area2D" parent="."]
+position = Vector2(10, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitbox"]
+scale = Vector2(-0.935514, 1.41517)
+shape = SubResource("CapsuleShape2D_y3bcu")
+
+[connection signal="body_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]

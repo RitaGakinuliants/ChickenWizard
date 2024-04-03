@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://q2pku3na2j8e"]
+
+[ext_resource type="Script" path="res://Components/EntityResourceComponent.gd" id="1_k6g88"]
+
+[node name="EntityResourceComponent" type="Node2D"]
+script = ExtResource("1_k6g88")
+max_value = 5
+initial_value = 5

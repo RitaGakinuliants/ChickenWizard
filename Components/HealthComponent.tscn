@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbuvobsxojdal"]
+
+[ext_resource type="PackedScene" uid="uid://q2pku3na2j8e" path="res://Components/EntityResourceComponent.tscn" id="1_irhu3"]
+[ext_resource type="Script" path="res://Components/HealthComponent.gd" id="2_38fbo"]
+
+[node name="HealthComponent" instance=ExtResource("1_irhu3")]
+script = ExtResource("2_38fbo")
+max_value = 3
+initial_value = 3

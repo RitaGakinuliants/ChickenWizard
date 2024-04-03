@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1de3p3u6yanb"
-path="res://.godot/imported/topDown_baseTiles.png-1766dd1c70dc45a0e2beea1b89cb68f3.ctex"
+path="res://.godot/imported/topDown_baseTiles.png-f29799de1d1706f4ea3b06cd84d72248.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/environment/tilesets/topDown_baseTiles.png"
-dest_files=["res://.godot/imported/topDown_baseTiles.png-1766dd1c70dc45a0e2beea1b89cb68f3.ctex"]
+source_file="res://Art/environment/tilesets/topDown_baseTiles.png"
+dest_files=["res://.godot/imported/topDown_baseTiles.png-f29799de1d1706f4ea3b06cd84d72248.ctex"]
 
 [params]
 
