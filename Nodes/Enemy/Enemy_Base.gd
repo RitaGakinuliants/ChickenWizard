@@ -4,7 +4,7 @@ class_name Enemy
 @export var damage_amount = 1
 @onready var player = get_node("../Player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	velocity = position.direction_to(player.position) * speed
 	

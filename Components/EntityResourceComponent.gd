@@ -22,7 +22,7 @@ func get_current_value():
 func decrease_value(amount : int):
 	if _current_value > 0 and amount > 0:
 		_current_value = max((_current_value - amount), 0)
-		value_decreased.emit(_current_value)
+		value_decreased.emit()
 	else:
 		return false
 	

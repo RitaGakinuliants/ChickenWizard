@@ -7,7 +7,7 @@ signal spawn
 func _ready():
 	$BushTimer.start()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_bush_timer_timeout():

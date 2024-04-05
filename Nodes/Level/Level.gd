@@ -11,7 +11,7 @@ func _ready():
 	var local_hp : int = $Player/HealthComponent._current_value
 	$HUD.setMaxLife(local_hp)
 	
-func _process(delta):
+func _process(_delta):
 	score_update()
 
 func score_update():
